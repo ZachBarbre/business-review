@@ -1,0 +1,19 @@
+
+<section class="section">
+    <div class="container">
+        <ul>${businessData[0].name}
+            <li>Address: ${businessData[0].address}</li>
+            <li>Category: ${businessData[0].category}</li>
+            <ul><li>Reviews</li></ul>
+                ${reviewsData.map(review => `
+                    <li>${review.stars} - ${review.title}</li>
+                    `).join('')}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <a class="button is-link" href="/">Back to All</a>
+    </div>
+</section>
