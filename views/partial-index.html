@@ -1,0 +1,13 @@
+<section class="section">
+    <div class="container">
+        <ul>
+            ${businessData.map( business => `
+                <li><a href="${business.id}">${business.name}</a></li>`).join('')}
+        </ul>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <a class="button is-link" href="/">Back to All</a>
+    </div>
+</section>
