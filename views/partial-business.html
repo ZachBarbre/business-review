@@ -1,16 +1,67 @@
 
 <section class="section">
     <div class="container">
-        <ul>${businessData[0].name}
+        <ul><h2 class="subtitle">${businessData[0].name}</h2>
             <li>Address: ${businessData[0].address}</li>
             <li>Category: ${businessData[0].category}</li>
-            <ul><li>Reviews</li></ul>
-                ${reviewsData.map(review => `
-                    <li>${review.stars} - ${review.title}</li>
-                    `).join('')}
+            <i class="fas fa-star has-text-warning"></i>
         </ul>
     </div>
 </section>
+
+    <div class="container">
+        <form action="/" method="POST">
+
+            <input type="hidden" value=${businessData[0].id} name="business_id"/>
+            <div class="field">
+                <label class="label">Title 
+                    <input class="input" type="text" name="review_title" placeholder="Review Title"/>
+                </label>
+            </div>
+
+            <div class="field">
+                <label class="label">Stars  </label>
+                <div class="control">
+                    <label class="radio"> 
+                        <input type="radio" name="stars" value="1">
+                        1
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="stars" value="2">
+                        2
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="stars" value="3">
+                        3
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="stars" value="4">
+                        4
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="stars" value="5">
+                        5
+                    </label>
+                </div>
+            
+            <div class="field">
+                <label class="label">Review 
+                    <textarea class="textarea" name="review_text" placeholder="My review of this..."></textarea>   
+                </label>
+                <button class="button is-primary" type="submit">Save Review</button>
+            </div>
+        </form>
+    </div>
+
+<section class="section">
+    <div class="container">
+        <ul><h2 class="subtitle">Reviews</h2>
+            ${reviewsData.map(review => `
+                <li>${review.name} - ${review.title} </li>
+                `).join('')}
+        </ul>
+    </div>
+<section class="section">
 
 <section class="section">
     <div class="container">
